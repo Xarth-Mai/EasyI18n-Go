@@ -1,6 +1,6 @@
 package main
 
-var translations = map[string]map[string]string{
+var EasyI18n_translations = map[string]map[string]string{
 	"en": {
 		"greeting": "Hello, %s!",
 	},

@@ -1,4 +1,4 @@
-package i18n
+package translations
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 
 var currentLanguage string
 
-func initLanguage() {
+func InitLanguage() {
 	envVars := []string{"LANG", "LC_ALL", "LC_MESSAGES"}
 	var languageCode string
 
@@ -37,10 +37,10 @@ func initLanguage() {
 }
 
 func Translate(key string, args ...interface{}) string {
-	if val, ok := translations[currentLanguage][key]; ok {
+	if val, ok := EasyI18nTranslations[currentLanguage][key]; ok {
 		return fmt.Sprintf(val, args...)
 	}
-	if val, ok := translations["en"][key]; ok {
+	if val, ok := EasyI18nTranslations["en"][key]; ok {
 		return fmt.Sprintf(val, args...)
 	}
 	missingkey := "$" + key

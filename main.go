@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/Xarth-Mai/EasyI18n-Go/i18n"
+	"github.com/Xarth-Mai/EasyI18n-Go/translations"
 )
 
 func main() {
-	i18n.InitLanguage()
-	fmt.Println(i18n.Translate("greeting", "World"))
+	translations.InitLanguage()
+	fmt.Println(translations.Translate("greeting", "World"))
 }
