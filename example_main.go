@@ -12,4 +12,5 @@ func main() {
 
 	translations.InitLanguage()
 	fmt.Println(translations.Translate("greeting", "World"))
+	fmt.Println(translations.Translate("farewell", "World"))
 }

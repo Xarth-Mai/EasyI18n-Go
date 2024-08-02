@@ -37,6 +37,24 @@ func InitLanguage() {
 		}
 	case strings.HasPrefix(languageCode, "ja"):
 		currentLanguage = "jp"
+	case strings.HasPrefix(languageCode, "fr"):
+		currentLanguage = "fr"
+	case strings.HasPrefix(languageCode, "es"):
+		currentLanguage = "es"
+	case strings.HasPrefix(languageCode, "de"):
+		currentLanguage = "de"
+	case strings.HasPrefix(languageCode, "it"):
+		currentLanguage = "it"
+	case strings.HasPrefix(languageCode, "pt"):
+		currentLanguage = "pt"
+	case strings.HasPrefix(languageCode, "ru"):
+		currentLanguage = "ru"
+	case strings.HasPrefix(languageCode, "ko"):
+		currentLanguage = "ko"
+	case strings.HasPrefix(languageCode, "ar"):
+		currentLanguage = "ar"
+	case strings.HasPrefix(languageCode, "hi"):
+		currentLanguage = "hi"
 	default:
 		currentLanguage = "en"
 	}
