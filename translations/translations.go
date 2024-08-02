@@ -1,30 +1,54 @@
 package translations
 
 import (
-	"encoding/json"
+	"fmt"
 	"os"
+	"strings"
 )
 
-var EasyI18nTranslations = map[string]map[string]string{
-	//example
-	"en": {
-		"greeting": "Hello, %s!",
-	},
+var EasyI18nTranslations = map[string]map[string]string{}
+
+var currentLanguage string
+
+func SetCustomTranslations(data map[string]map[string]string) {
+	EasyI18nTranslations = data
 }
 
-func LoadTranslationsFromFile(filename string) error {
-	file, err := os.Open(filename)
-	if err != nil {
-		return err
-	}
-	defer file.Close()
+func InitLanguage() {
+	envVars := []string{"LANG", "LC_ALL", "LC_MESSAGES"}
+	var languageCode string
 
-	decoder := json.NewDecoder(file)
-	var data map[string]map[string]string
-	if err := decoder.Decode(&data); err != nil {
-		return err
+	for _, envVar := range envVars {
+		if lang, exists := os.LookupEnv(envVar); exists {
+			parts := strings.Split(lang, "_")
+			if len(parts) > 0 {
+				languageCode = parts[0]
+				break
+			}
+		}
 	}
 
-	EasyI18nTranslations = data
-	return nil
+	switch {
+	case strings.HasPrefix(languageCode, "zh"):
+		if len(strings.Split(languageCode, "_")) > 1 && strings.HasSuffix(languageCode, "TW") {
+			currentLanguage = "zht"
+		} else {
+			currentLanguage = "zhs"
+		}
+	case strings.HasPrefix(languageCode, "ja"):
+		currentLanguage = "jp"
+	default:
+		currentLanguage = "en"
+	}
+}
+
+func Translate(key string, args ...interface{}) string {
+	if val, ok := EasyI18nTranslations[currentLanguage][key]; ok {
+		return fmt.Sprintf(val, args...)
+	}
+	if val, ok := EasyI18nTranslations["en"][key]; ok {
+		return fmt.Sprintf(val, args...)
+	}
+	missingkey := "$" + key
+	return missingkey
 }

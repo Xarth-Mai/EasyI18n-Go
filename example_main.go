@@ -7,10 +7,8 @@ import (
 )
 
 func main() {
-	if err := translations.LoadTranslationsFromFile("example_translations.json"); err != nil {
-		fmt.Println("Error loading translations:", err)
-		return
-	}
+	// 传入自定义的翻译数据
+	translations.SetCustomTranslations(EasyI18n_translations)
 
 	translations.InitLanguage()
 	fmt.Println(translations.Translate("greeting", "World"))
