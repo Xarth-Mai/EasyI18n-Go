@@ -30,4 +30,28 @@ var EasyI18nTranslations = map[string]map[string]string{
 		"greeting": "Hallo, %s!",
 		"farewell": "Auf Wiedersehen, %s!",
 	},
+	"it": {
+		"greeting": "Ciao, %s!",
+		"farewell": "Arrivederci, %s!",
+	},
+	"pt": {
+		"greeting": "Olá, %s!",
+		"farewell": "Adeus, %s!",
+	},
+	"ru": {
+		"greeting": "Здравствуйте, %s!",
+		"farewell": "До свидания, %s!",
+	},
+	"ko": {
+		"greeting": "안녕하세요, %s!",
+		"farewell": "안녕히 가세요, %s!",
+	},
+	"ar": {
+		"greeting": "مرحبا, %s!",
+		"farewell": "وداعا, %s!",
+	},
+	"hi": {
+		"greeting": "नमस्ते, %s!",
+		"farewell": "अलविदा, %s!",
+	},
 }
