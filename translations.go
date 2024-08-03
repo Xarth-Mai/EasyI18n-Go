@@ -4,6 +4,7 @@ var EasyI18nTranslations = map[string]map[string]string{
 	"en": {
 		"greeting": "Hello, %s!",
 		"farewell": "Goodbye, %s!",
+		"goodbye":  "goodbye",
 		"hello":    "Hello",
 	},
 	"zhs": {
