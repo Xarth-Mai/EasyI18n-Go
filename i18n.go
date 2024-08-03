@@ -1,4 +1,4 @@
-package EasyI18n
+package i18n
 
 import (
 	"fmt"
