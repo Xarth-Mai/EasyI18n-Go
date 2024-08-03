@@ -5,8 +5,8 @@ EasyI18n-Go is a simple internationalization (i18n) module for Go projects. It a
 ## 💡 Features
 
 - Rapid deployment of multilingual support
-- Automatically fallback to English
-- Automatically set the current language based on environment variables
+- Auto fallback to English
+- Auto-set 13 languages from environment variables
 - Allow manual language setting
 - Provide a script to check translation keys
 
@@ -16,7 +16,7 @@ EasyI18n-Go is a simple internationalization (i18n) module for Go projects. It a
 
 ### 1. Using the Translation Module
 
-Use the translation module in your `main.go` file. [Example](https://github.com/Xarth-Mai/EasyI18n-Go/blob/main/main.go):
+Use the translation module in your `main.go` file.
 
 ```go
 package main
@@ -41,13 +41,14 @@ func main() {
 	one := "World"
 	fmt.Println(i18n.Translate("greeting", one))
 	fmt.Println(i18n.Translate("farewell", "World"))
-	fmt.Println(i18n.Translate("goodbye", "World")) // Returns the key name if no match is found
+	fmt.Println(i18n.Translate("goodbye")) // Returns English if the current language does not match
+	fmt.Println(i18n.Translate("byebye", "World")) // Returns the key name if no match is found
 }
 ```
 
 ### 2. Defining Translation Texts
 
-Create a `translations.go` file and define your translation texts within it. [Example](https://github.com/Xarth-Mai/EasyI18n-Go/blob/main/translations.go):
+Create a `translations.go` file and define your translation texts within it.
 
 ```go
 package main
@@ -56,10 +57,8 @@ var EasyI18nTranslations = map[string]map[string]string{
 	"en": {
 		"greeting": "Hello, %s!",
 		"farewell": "Goodbye, %s!",
-	},
-	"zhs": {
-		"greeting": "你好, %s!",
-		"farewell": "再见, %s!",
+		"goodbye":  "goodbye",
+		"hello":    "Hello",
 	},
 	"zht": {
 		"greeting": "你好, %s!",
@@ -68,18 +67,6 @@ var EasyI18nTranslations = map[string]map[string]string{
 	"jp": {
 		"greeting": "こんにちは、%s!",
 		"farewell": "さようなら、%s!",
-	},
-	"fr": {
-		"greeting": "Bonjour, %s!",
-		"farewell": "Au revoir, %s!",
-	},
-	"es": {
-		"greeting": "Hola, %s!",
-		"farewell": "Adiós, %s!",
-	},
-	"de": {
-		"greeting": "Hallo, %s!",
-		"farewell": "Auf Wiedersehen, %s!",
 	},
 }
 ```
@@ -97,40 +84,38 @@ Example output:
 ```
 --- en Translations ---
 Missing keys:
-  goodbye
+  byebye
 Extra keys:
   hello
 
---- zhs Translations ---
-Missing keys:
-  goodbye
-Extra keys: None
-
 --- zht Translations ---
 Missing keys:
+  byebye
   goodbye
 Extra keys: None
 
 --- jp Translations ---
 Missing keys:
-  goodbye
-Extra keys: None
-
---- fr Translations ---
-Missing keys:
-  goodbye
-Extra keys: None
-
---- es Translations ---
-Missing keys:
-  goodbye
-Extra keys: None
-
---- de Translations ---
-Missing keys:
+  byebye
   goodbye
 Extra keys: None
 ```
+
+## 🌐 i18n
+
+- [x] [en] English
+- [x] [zhs] 简体中文 (Simplified Chinese)
+- [x] [zht] 繁體中文 (Traditional Chinese)
+- [x] [ja] 日本語 (Japanese)
+- [x] [fr] Français (French)
+- [x] [es] Español (Spanish)
+- [x] [de] Deutsch (German)
+- [x] [it] Italiano (Italian)
+- [x] [pt] Português (Portuguese)
+- [x] [ru] Русский (Russian)
+- [x] [ko] 한국어 (Korean)
+- [x] [ar] العربية (Arabic)
+- [x] [hi] हिन्दी (Hindi)
 
 ## 🛠 License
 
