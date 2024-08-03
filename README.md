@@ -112,19 +112,21 @@ Extra keys: None
 
 ## 🌐 i18n
 Supports automatic setting of the following languages:
-- [x] [en] English
-- [x] [zhs] 简体中文 (Simplified Chinese)
-- [x] [zht] 繁體中文 (Traditional Chinese)
-- [x] [ja] 日本語 (Japanese)
-- [x] [fr] Français (French)
-- [x] [es] Español (Spanish)
-- [x] [de] Deutsch (German)
-- [x] [it] Italiano (Italian)
-- [x] [pt] Português (Portuguese)
-- [x] [ru] Русский (Russian)
-- [x] [ko] 한국어 (Korean)
-- [x] [ar] العربية (Arabic)
-- [x] [hi] हिन्दी (Hindi)
+| Code | Language Name (Native) | Language Name (English) |
+|------|------------------------|--------------------------|
+| en   | English                | English                  |
+| zhs  | 简体中文               | Simplified Chinese       |
+| zht  | 繁體中文               | Traditional Chinese      |
+| ja   | 日本語                 | Japanese                 |
+| fr   | Français               | French                   |
+| es   | Español                | Spanish                  |
+| de   | Deutsch                | German                   |
+| it   | Italiano               | Italian                  |
+| pt   | Português              | Portuguese               |
+| ru   | Русский                | Russian                  |
+| ko   | 한국어                 | Korean                   |
+| ar   | العربية                   | Arabic                   |
+| hi   | हिन्दी          | Hindi                    |
 
 ## 🛠 License
 
