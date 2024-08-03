@@ -24,7 +24,7 @@ def print_keys(title, keys):
         print(f"{title}: None")
 
 def main():
-    main_go_keys = extract_translate_keys('main.go')
+    main_go_keys = extract_translate_keys('example_main.go')
     translations = extract_translations('translations.go')
 
     main_go_keys_set = set(main_go_keys)
