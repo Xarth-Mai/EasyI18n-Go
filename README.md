@@ -24,7 +24,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Xarth-Mai/EasyI18n-Go/i18n"
+	"github.com/Xarth-Mai/EasyI18n-Go"
 )
 
 func main() {
