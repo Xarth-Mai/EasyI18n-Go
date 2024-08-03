@@ -5,10 +5,10 @@ EasyI18n-Go is a simple internationalization (i18n) module for Go projects. It a
 ## 💡 Features
 
 - Rapid deployment of multilingual support
-- Auto-set 13 languages from environment variables
+- Auto-set [13 languages](https://github.com/Xarth-Mai/EasyI18n-Go#-i18n) from environment variables
 - Allows to manually set any language
 - Auto fallback to English
-- Provide a script to check translation keys
+- Provide a [script](https://github.com/Xarth-Mai/EasyI18n-Go/blob/main/check_translations.py) to check translation keys
 
 ## 📝 Usage
 
