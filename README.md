@@ -24,7 +24,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Xarth-Mai/EasyI18n-Go"
+	i18n "github.com/Xarth-Mai/EasyI18n-Go"
 )
 
 func main() {
@@ -46,6 +46,15 @@ func main() {
 }
 ```
 
+Example output:
+
+```text
+こんにちは、World!
+さようなら、World!
+goodbyeeeeeeeeee
+$byebye
+```
+
 ### 2. Defining Translation Texts
 
 Create a `translations.go` file and define your translation texts within it.
@@ -57,7 +66,7 @@ var EasyI18nTranslations = map[string]map[string]string{
 	"en": {
 		"greeting": "Hello, %s!",
 		"farewell": "Goodbye, %s!",
-		"goodbye":  "goodbye",
+		"goodbye":  "goodbyeeeeeeeeee",
 		"hello":    "Hello",
 	},
 	"zht": {
