@@ -28,21 +28,21 @@ import (
 )
 
 func main() {
-	// Set custom translation data
+	// Set custom translation data (required)
 	i18n.SetCustomTranslations(EasyI18nTranslations)
 
 	// Automatically set language
 	i18n.InitLanguage()
 
 	// Or manually specify language
-	i18n.SetLanguage("jp")
+	i18n.SetLanguage("jp")  	// You can provide any other language in the configuration file and use it like this
 
 	// Use translation
 	one := "World"
-	fmt.Println(i18n.Translate("greeting", one))
-	fmt.Println(i18n.Translate("farewell", "World"))
-	fmt.Println(i18n.Translate("goodbye")) // Returns English if the current language does not match
-	fmt.Println(i18n.Translate("byebye", "World")) // Returns the key name if no match is found
+	fmt.Println(i18n.Translate("greeting", one))     // func Translate(key string, args ...interface{}) string {}
+	fmt.Println(i18n.Translate("farewell", "World")) // Function supports string formatting
+	fmt.Println(i18n.Translate("goodbye"))           // Returns English if the current language does not match
+	fmt.Println(i18n.Translate("byebye", "World"))   // Returns ("$" + keyname) if no match is found
 }
 ```
 
@@ -111,13 +111,15 @@ Extra keys: None
 ```
 
 ## 🌐 i18n
+
 Supports automatic setting of the following languages:
+
 | Code | Language Name (Native) | Language Name (English) |
 |------|------------------------|--------------------------|
 | en   | English                | English                  |
 | zhs  | 简体中文               | Simplified Chinese       |
 | zht  | 繁體中文               | Traditional Chinese      |
-| ja   | 日本語                 | Japanese                 |
+| jp   | 日本語                 | Japanese                 |
 | fr   | Français               | French                   |
 | es   | Español                | Spanish                  |
 | de   | Deutsch                | German                   |
@@ -126,7 +128,7 @@ Supports automatic setting of the following languages:
 | ru   | Русский                | Russian                  |
 | ko   | 한국어                 | Korean                   |
 | ar   | العربية                   | Arabic                   |
-| hi   | हिन्दी          | Hindi                    |
+| hi   | हिन्दी           | Hindi                    |
 
 ## 🛠 License
 
